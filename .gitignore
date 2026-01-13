@@ -1,0 +1,35 @@
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Data files (large)
+bike_race_analysis/data/raw/*.csv
+bike_race_analysis/data/raw/*.json
+bike_race_analysis/data/cleaned/*.csv
+bike_race_analysis/data/cleaned/*.json
+
+# Keep directory structure
+!bike_race_analysis/data/raw/.gitkeep
+!bike_race_analysis/data/cleaned/.gitkeep
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
