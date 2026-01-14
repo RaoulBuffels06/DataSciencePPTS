@@ -69,6 +69,7 @@ python bike_races_scraper.py
 
 Dit script:
 - Scrapet winnaar data van Wikipedia
+- **Fallback**: Als Wikipedia niet toegankelijk is, gebruikt het sample data voor demonstratie
 - Gebruikt **regex** voor data cleaning (`\d{4}` voor jaren, `\[.*?\]` voor referenties)
 - Gebruikt **list comprehensions** voor data transformatie
 - Gebruikt **filter()** om invalide entries te verwijderen
