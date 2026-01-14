@@ -18,6 +18,15 @@ bike_race_analysis/data/cleaned/*.json
 !bike_race_analysis/data/raw/.gitkeep
 !bike_race_analysis/data/cleaned/.gitkeep
 
+# Project output and data files
+project/output/*.png
+project/data/*.json
+project/data/*.csv
+
+# Keep directory structure
+!project/output/.gitkeep
+!project/data/.gitkeep
+
 # Virtual environments
 venv/
 env/
