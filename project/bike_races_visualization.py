@@ -11,6 +11,8 @@ Visualizations:
 """
 
 import json
+import matplotlib
+matplotlib.use('Agg')  # Use non-interactive backend for saving plots
 import matplotlib.pyplot as plt
 from collections import Counter
 from typing import List, Dict
@@ -105,8 +107,6 @@ def create_top_countries_bar_chart(winners: List[Dict[str, str]], race: str = No
     plt.savefig(output_file, dpi=300, bbox_inches='tight')
     print(f"✓ Saved: {output_file}")
     
-    # Show
-    plt.show()
     plt.close()
 
 
@@ -173,8 +173,6 @@ def create_wins_per_decade_line_plot(winners: List[Dict[str, str]], race: str = 
     plt.savefig(output_file, dpi=300, bbox_inches='tight')
     print(f"✓ Saved: {output_file}")
     
-    # Show
-    plt.show()
     plt.close()
 
 
@@ -235,8 +233,6 @@ def create_wins_distribution_histogram(winners: List[Dict[str, str]]):
     plt.savefig(output_file, dpi=300, bbox_inches='tight')
     print(f"✓ Saved: {output_file}")
     
-    # Show
-    plt.show()
     plt.close()
 
 
@@ -292,8 +288,6 @@ def create_races_pie_chart(winners: List[Dict[str, str]]):
     plt.savefig(output_file, dpi=300, bbox_inches='tight')
     print(f"✓ Saved: {output_file}")
     
-    # Show
-    plt.show()
     plt.close()
 
 
@@ -355,8 +349,6 @@ def create_top_riders_bar_chart(winners: List[Dict[str, str]]):
     plt.savefig(output_file, dpi=300, bbox_inches='tight')
     print(f"✓ Saved: {output_file}")
     
-    # Show
-    plt.show()
     plt.close()
 
 

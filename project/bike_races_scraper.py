@@ -276,12 +276,117 @@ def save_data(data: List[Dict[str, str]], filename: str = 'tour_winners.json'):
         print(f"Error saving data: {e}")
 
 
+def create_sample_data() -> List[Dict[str, str]]:
+    """
+    Create sample data for demonstration/testing purposes when Wikipedia is not accessible.
+    
+    Returns:
+        List of sample winner dictionaries
+    """
+    print("Creating sample data for demonstration...")
+    
+    # Sample Tour de France winners (historical data)
+    sample_data = [
+        # Tour de France
+        {'year': '2023', 'rider': 'Jonas Vingegaard', 'country': 'Denmark', 'team': 'Jumbo-Visma', 'race': 'Tour de France'},
+        {'year': '2022', 'rider': 'Jonas Vingegaard', 'country': 'Denmark', 'team': 'Jumbo-Visma', 'race': 'Tour de France'},
+        {'year': '2021', 'rider': 'Tadej Pogačar', 'country': 'Slovenia', 'team': 'UAE Team Emirates', 'race': 'Tour de France'},
+        {'year': '2020', 'rider': 'Tadej Pogačar', 'country': 'Slovenia', 'team': 'UAE Team Emirates', 'race': 'Tour de France'},
+        {'year': '2019', 'rider': 'Egan Bernal', 'country': 'Colombia', 'team': 'Team Ineos', 'race': 'Tour de France'},
+        {'year': '2018', 'rider': 'Geraint Thomas', 'country': 'Great Britain', 'team': 'Team Sky', 'race': 'Tour de France'},
+        {'year': '2017', 'rider': 'Chris Froome', 'country': 'Great Britain', 'team': 'Team Sky', 'race': 'Tour de France'},
+        {'year': '2016', 'rider': 'Chris Froome', 'country': 'Great Britain', 'team': 'Team Sky', 'race': 'Tour de France'},
+        {'year': '2015', 'rider': 'Chris Froome', 'country': 'Great Britain', 'team': 'Team Sky', 'race': 'Tour de France'},
+        {'year': '2014', 'rider': 'Vincenzo Nibali', 'country': 'Italy', 'team': 'Astana', 'race': 'Tour de France'},
+        {'year': '2013', 'rider': 'Chris Froome', 'country': 'Great Britain', 'team': 'Team Sky', 'race': 'Tour de France'},
+        {'year': '2012', 'rider': 'Bradley Wiggins', 'country': 'Great Britain', 'team': 'Team Sky', 'race': 'Tour de France'},
+        {'year': '2011', 'rider': 'Cadel Evans', 'country': 'Australia', 'team': 'BMC Racing Team', 'race': 'Tour de France'},
+        {'year': '2010', 'rider': 'Andy Schleck', 'country': 'Luxembourg', 'team': 'Team Saxo Bank', 'race': 'Tour de France'},
+        {'year': '2009', 'rider': 'Alberto Contador', 'country': 'Spain', 'team': 'Astana', 'race': 'Tour de France'},
+        {'year': '2008', 'rider': 'Carlos Sastre', 'country': 'Spain', 'team': 'Team CSC', 'race': 'Tour de France'},
+        {'year': '2007', 'rider': 'Alberto Contador', 'country': 'Spain', 'team': 'Discovery Channel', 'race': 'Tour de France'},
+        {'year': '2006', 'rider': 'Óscar Pereiro', 'country': 'Spain', 'team': 'Caisse d\'Épargne', 'race': 'Tour de France'},
+        {'year': '2005', 'rider': 'No winner', 'country': '', 'team': '', 'race': 'Tour de France'},
+        {'year': '2004', 'rider': 'No winner', 'country': '', 'team': '', 'race': 'Tour de France'},
+        {'year': '2003', 'rider': 'No winner', 'country': '', 'team': '', 'race': 'Tour de France'},
+        {'year': '2002', 'rider': 'No winner', 'country': '', 'team': '', 'race': 'Tour de France'},
+        {'year': '2001', 'rider': 'No winner', 'country': '', 'team': '', 'race': 'Tour de France'},
+        {'year': '2000', 'rider': 'No winner', 'country': '', 'team': '', 'race': 'Tour de France'},
+        {'year': '1999', 'rider': 'No winner', 'country': '', 'team': '', 'race': 'Tour de France'},
+        {'year': '1998', 'rider': 'Marco Pantani', 'country': 'Italy', 'team': 'Mercatone Uno', 'race': 'Tour de France'},
+        {'year': '1997', 'rider': 'Jan Ullrich', 'country': 'Germany', 'team': 'Team Telekom', 'race': 'Tour de France'},
+        {'year': '1996', 'rider': 'Bjarne Riis', 'country': 'Denmark', 'team': 'Team Telekom', 'race': 'Tour de France'},
+        {'year': '1995', 'rider': 'Miguel Indurain', 'country': 'Spain', 'team': 'Banesto', 'race': 'Tour de France'},
+        {'year': '1994', 'rider': 'Miguel Indurain', 'country': 'Spain', 'team': 'Banesto', 'race': 'Tour de France'},
+        {'year': '1993', 'rider': 'Miguel Indurain', 'country': 'Spain', 'team': 'Banesto', 'race': 'Tour de France'},
+        {'year': '1992', 'rider': 'Miguel Indurain', 'country': 'Spain', 'team': 'Banesto', 'race': 'Tour de France'},
+        {'year': '1991', 'rider': 'Miguel Indurain', 'country': 'Spain', 'team': 'Banesto', 'race': 'Tour de France'},
+        {'year': '1990', 'rider': 'Greg LeMond', 'country': 'United States', 'team': 'Z', 'race': 'Tour de France'},
+        {'year': '1989', 'rider': 'Greg LeMond', 'country': 'United States', 'team': 'ADR', 'race': 'Tour de France'},
+        {'year': '1988', 'rider': 'Pedro Delgado', 'country': 'Spain', 'team': 'Reynolds', 'race': 'Tour de France'},
+        {'year': '1987', 'rider': 'Stephen Roche', 'country': 'Ireland', 'team': 'Carrera', 'race': 'Tour de France'},
+        {'year': '1986', 'rider': 'Greg LeMond', 'country': 'United States', 'team': 'La Vie Claire', 'race': 'Tour de France'},
+        {'year': '1985', 'rider': 'Bernard Hinault', 'country': 'France', 'team': 'La Vie Claire', 'race': 'Tour de France'},
+        {'year': '1984', 'rider': 'Laurent Fignon', 'country': 'France', 'team': 'Renault-Elf', 'race': 'Tour de France'},
+        {'year': '1983', 'rider': 'Laurent Fignon', 'country': 'France', 'team': 'Renault-Elf', 'race': 'Tour de France'},
+        {'year': '1982', 'rider': 'Bernard Hinault', 'country': 'France', 'team': 'Renault-Elf', 'race': 'Tour de France'},
+        {'year': '1981', 'rider': 'Bernard Hinault', 'country': 'France', 'team': 'Renault-Elf', 'race': 'Tour de France'},
+        {'year': '1980', 'rider': 'Joop Zoetemelk', 'country': 'Netherlands', 'team': 'TI-Raleigh', 'race': 'Tour de France'},
+        {'year': '1979', 'rider': 'Bernard Hinault', 'country': 'France', 'team': 'Renault-Gitane', 'race': 'Tour de France'},
+        {'year': '1978', 'rider': 'Bernard Hinault', 'country': 'France', 'team': 'Renault-Gitane', 'race': 'Tour de France'},
+        {'year': '1977', 'rider': 'Bernard Thévenet', 'country': 'France', 'team': 'Peugeot', 'race': 'Tour de France'},
+        {'year': '1976', 'rider': 'Lucien Van Impe', 'country': 'Belgium', 'team': 'Gitane', 'race': 'Tour de France'},
+        {'year': '1975', 'rider': 'Bernard Thévenet', 'country': 'France', 'team': 'Peugeot', 'race': 'Tour de France'},
+        {'year': '1974', 'rider': 'Eddy Merckx', 'country': 'Belgium', 'team': 'Molteni', 'race': 'Tour de France'},
+        {'year': '1973', 'rider': 'Luis Ocaña', 'country': 'Spain', 'team': 'Bic', 'race': 'Tour de France'},
+        {'year': '1972', 'rider': 'Eddy Merckx', 'country': 'Belgium', 'team': 'Molteni', 'race': 'Tour de France'},
+        {'year': '1971', 'rider': 'Eddy Merckx', 'country': 'Belgium', 'team': 'Molteni', 'race': 'Tour de France'},
+        {'year': '1970', 'rider': 'Eddy Merckx', 'country': 'Belgium', 'team': 'Faemino', 'race': 'Tour de France'},
+        {'year': '1969', 'rider': 'Eddy Merckx', 'country': 'Belgium', 'team': 'Faema', 'race': 'Tour de France'},
+        
+        # Giro d'Italia
+        {'year': '2023', 'rider': 'Primož Roglič', 'country': 'Slovenia', 'team': 'Jumbo-Visma', 'race': 'Giro d\'Italia'},
+        {'year': '2022', 'rider': 'Jai Hindley', 'country': 'Australia', 'team': 'Bora-Hansgrohe', 'race': 'Giro d\'Italia'},
+        {'year': '2021', 'rider': 'Egan Bernal', 'country': 'Colombia', 'team': 'Ineos Grenadiers', 'race': 'Giro d\'Italia'},
+        {'year': '2020', 'rider': 'Tao Geoghegan Hart', 'country': 'Great Britain', 'team': 'Ineos Grenadiers', 'race': 'Giro d\'Italia'},
+        {'year': '2019', 'rider': 'Richard Carapaz', 'country': 'Ecuador', 'team': 'Movistar', 'race': 'Giro d\'Italia'},
+        {'year': '2018', 'rider': 'Chris Froome', 'country': 'Great Britain', 'team': 'Team Sky', 'race': 'Giro d\'Italia'},
+        {'year': '2017', 'rider': 'Tom Dumoulin', 'country': 'Netherlands', 'team': 'Team Sunweb', 'race': 'Giro d\'Italia'},
+        {'year': '2016', 'rider': 'Vincenzo Nibali', 'country': 'Italy', 'team': 'Astana', 'race': 'Giro d\'Italia'},
+        {'year': '2015', 'rider': 'Alberto Contador', 'country': 'Spain', 'team': 'Tinkoff-Saxo', 'race': 'Giro d\'Italia'},
+        {'year': '2014', 'rider': 'Nairo Quintana', 'country': 'Colombia', 'team': 'Movistar', 'race': 'Giro d\'Italia'},
+        
+        # Vuelta a España
+        {'year': '2023', 'rider': 'Sepp Kuss', 'country': 'United States', 'team': 'Jumbo-Visma', 'race': 'Vuelta a España'},
+        {'year': '2022', 'rider': 'Remco Evenepoel', 'country': 'Belgium', 'team': 'Quick-Step Alpha Vinyl', 'race': 'Vuelta a España'},
+        {'year': '2021', 'rider': 'Primož Roglič', 'country': 'Slovenia', 'team': 'Jumbo-Visma', 'race': 'Vuelta a España'},
+        {'year': '2020', 'rider': 'Primož Roglič', 'country': 'Slovenia', 'team': 'Jumbo-Visma', 'race': 'Vuelta a España'},
+        {'year': '2019', 'rider': 'Primož Roglič', 'country': 'Slovenia', 'team': 'Jumbo-Visma', 'race': 'Vuelta a España'},
+        {'year': '2018', 'rider': 'Simon Yates', 'country': 'Great Britain', 'team': 'Mitchelton-Scott', 'race': 'Vuelta a España'},
+        {'year': '2017', 'rider': 'Chris Froome', 'country': 'Great Britain', 'team': 'Team Sky', 'race': 'Vuelta a España'},
+        {'year': '2016', 'rider': 'Nairo Quintana', 'country': 'Colombia', 'team': 'Movistar', 'race': 'Vuelta a España'},
+        {'year': '2015', 'rider': 'Fabio Aru', 'country': 'Italy', 'team': 'Astana', 'race': 'Vuelta a España'},
+        {'year': '2014', 'rider': 'Alberto Contador', 'country': 'Spain', 'team': 'Tinkoff-Saxo', 'race': 'Vuelta a España'},
+    ]
+    
+    # Filter out "No winner" entries using list comprehension
+    valid_data = [w for w in sample_data if w['rider'] != 'No winner']
+    
+    print(f"Created {len(valid_data)} sample winners")
+    return valid_data
+
+
 def main():
     """Main function to run the scraper."""
     print("=== Wikipedia Grand Tour Winners Scraper ===\n")
     
-    # Scrape Grand Tour winners
+    # Try to scrape Grand Tour winners from Wikipedia
     winners = scrape_grand_tour_winners()
+    
+    # If scraping failed (no internet), use sample data
+    if not winners:
+        print("\nWikipedia not accessible. Using sample data for demonstration.")
+        winners = create_sample_data()
     
     if winners:
         # Save to file
@@ -289,12 +394,12 @@ def main():
         
         # Print summary using Pythonic patterns
         races = list(set(w['race'] for w in winners))
-        print(f"\nScraped data from {len(races)} races:")
+        print(f"\nSaved data from {len(races)} races:")
         for race in races:
             race_winners = [w for w in winners if w['race'] == race]
             print(f"  - {race}: {len(race_winners)} winners")
     else:
-        print("No data scraped. Please check your internet connection and try again.")
+        print("Error: Could not load any data.")
 
 
 if __name__ == "__main__":
