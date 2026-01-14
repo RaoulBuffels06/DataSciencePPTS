@@ -15,7 +15,7 @@ import requests
 from bs4 import BeautifulSoup
 import re
 import json
-from typing import List, Dict
+from typing import List, Dict, Optional
 
 
 def scrape_tour_de_france() -> List[Dict[str, str]]:
@@ -59,7 +59,7 @@ def scrape_tour_de_france() -> List[Dict[str, str]]:
         return []
 
 
-def extract_winner_data(row) -> Dict[str, str]:
+def extract_winner_data(row) -> Optional[Dict[str, str]]:
     """
     Extract winner data from a table row.
     
@@ -212,7 +212,7 @@ def identify_race(table) -> str:
     return ""
 
 
-def extract_grand_tour_winner(row, race_name: str) -> Dict[str, str]:
+def extract_grand_tour_winner(row, race_name: str) -> Optional[Dict[str, str]]:
     """
     Extract winner data from a Grand Tour table row.
     
